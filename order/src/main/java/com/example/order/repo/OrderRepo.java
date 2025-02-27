@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderRepo extends JpaRepository<Order, Integer> {
     Order getOrderById(int id);
-//    @Query(value = "SELECT * FROM order WHERE id = ?1", nativeQuery = true)
-//    Order getOrderById(Integer orderId);
+    @Query(value = "SELECT * FROM orders WHERE id = ?1", nativeQuery = true)
+    Order getOrderById(Integer orderId);
 }

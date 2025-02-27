@@ -39,7 +39,7 @@ public class InventoryService {
         inventoryRepo.deleteById(itemId);
         return "Item deleted";
     }
-
+//
     public InventoryDTO getItemById(Integer itemId) {
         Inventory item = inventoryRepo.getItemById(itemId);
         return modelMapper.map(item, InventoryDTO.class);
