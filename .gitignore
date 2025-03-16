@@ -1,0 +1,9 @@
+# Ignore IDE and system files
+.idea/
+.DS_Store
+
+# Ignore target directories (Maven build artifacts)
+**/target/
+
+# Ignore logs and temporary files
+*.log
