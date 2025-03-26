@@ -1,4 +1,4 @@
-package com.hareendev.inventoryservice.model;
+package com.hareendev.orderservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Table(name="inventoryTable")
-public class Inventory {
+@Table(name="orderTable")
+public class Order {
     @Id
     private int id;
     private int itemId;
-    private int productId;
-    private int quantity;
+    private String orderDate;
+    private int amount;
 }
