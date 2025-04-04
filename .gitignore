@@ -1,0 +1,25 @@
+# IDE & Editor files
+.idea/
+*.iml
+*.swp
+.vscode/
+
+# macOS system files
+.DS_Store
+._*
+
+# Build & Dependency directories
+target/
+bin/
+build/
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+logs/
+
+# Environment files (sensitive data)
+.env
+*.properties
