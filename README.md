@@ -1,4 +1,4 @@
-# StockFlow - Inventory Management System 🚀
+# StockFlow - Order Management System 🚀
 
 A Spring Boot-based microservices architecture for inventory, order, and product management.
 
