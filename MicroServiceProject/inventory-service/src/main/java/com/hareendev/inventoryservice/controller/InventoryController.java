@@ -34,8 +34,8 @@ public class InventoryController {
         return inventoryService.deleteItem(itemId);
     }
 
-//    @GetMapping("/item/{itemId}")
-//    public InventoryDTO getItemById(@PathVariable Integer itemId) {
-//        return inventoryService.getItemById(itemId);
-//    }
+    @GetMapping("/getitem/{itemId}")
+    public InventoryDTO getItemById(@PathVariable Integer itemId) {
+        return inventoryService.getItemById(itemId);
+    }
 }

@@ -37,11 +37,11 @@ public class InventoryService {
 
     public String deleteItem(Integer itemId) {
         inventoryRepo.deleteById(itemId);
-        return "Item deleted";
+        return "Inventory Item deleted";
     }
 
-//    public InventoryDTO getItemById(Integer itemId) {
-//        Inventory item = inventoryRepo.getItemById(itemId);
-//        return modelMapper.map(item, InventoryDTO.class);
-//    }
+    public InventoryDTO getItemById(Integer itemId) {
+        Inventory item = inventoryRepo.findByItemId(itemId);
+        return modelMapper.map(item, InventoryDTO.class);
+    }
 }

@@ -1,5 +1,6 @@
 package com.hareendev.orderservice.controller;
 
+import com.hareendev.orderservice.common.OrderResponse;
 import com.hareendev.orderservice.dto.OrderDTO;
 import com.hareendev.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,14 @@ public class OrderController {
     }
 
     @PostMapping("/addorder")
-    public OrderDTO saveOrder(@RequestBody OrderDTO orderDTO) {
+    public OrderResponse saveOrder(@RequestBody OrderDTO orderDTO) {
         return orderService.saveOrder(orderDTO);
     }
+
+//    @PostMapping("/addorder")
+//    public OrderDTO saveOrder(@RequestBody OrderDTO orderDTO) {
+//        return orderService.saveOrder(orderDTO);
+//    }
 
     @PutMapping("/updateorder")
     public OrderDTO updateOrder(@RequestBody OrderDTO orderDTO) {
@@ -34,8 +40,8 @@ public class OrderController {
         return orderService.deleteOrder(orderId);
     }
 
-//    @GetMapping("/order/{orderId}")
-//    public OrderDTO getOrderById(@PathVariable Integer orderId) {
-//        return orderService.getOrderById(orderId);
-//    }
+    @GetMapping("/order/{orderId}")
+    public OrderDTO getOrderById(@PathVariable Integer orderId) {
+        return orderService.getOrderById(orderId);
+    }
 }
