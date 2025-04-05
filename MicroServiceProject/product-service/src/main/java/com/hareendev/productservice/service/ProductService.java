@@ -42,9 +42,9 @@ import java.util.List;
             return "Product deleted";
         }
 
-//        public ProductDTO getProductById(Integer productId) {
-//            Product product = productRepo.getProductById(productId);
-//            return modelMapper.map(product, ProductDTO.class);
-//        }
+        public ProductDTO getProductById(Integer productId) {
+            Product product = productRepo.getProductById(productId);
+            return modelMapper.map(product, ProductDTO.class);
+        }
     }
 

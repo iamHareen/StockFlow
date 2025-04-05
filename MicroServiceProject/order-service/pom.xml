@@ -54,5 +54,11 @@
             <artifactId>inventoryservice</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.hareendev</groupId>
+            <artifactId>productservice</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 </project>
