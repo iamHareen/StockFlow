@@ -14,6 +14,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import java.util.List;
 
@@ -77,11 +78,14 @@ public class OrderService {
             } else {
                 return new ErrorOrderResponse("Item Not available in the Inventory, Please try later");
             }
-        } catch (Exception e) {
-            return new ErrorOrderResponse("Failed to check inventory: " + e.getMessage());
+        } catch (WebClientResponseException e) {
+            if(e.getStatusCode().is5xxServerError()) {
+                // this is not the corrected way to handle not found item
+                return new ErrorOrderResponse("Item not found");
+            }
         }
+        return null;
     }
-
 
     public OrderDTO updateOrder(OrderDTO OrderDTO) {
         orderRepo.save(modelMapper.map(OrderDTO, Order.class));
