@@ -1,11 +1,9 @@
 package com.hareendev.inventoryservice.kafka;
 
 import com.hareendev.base.dto.OrderEventDTO;
-import org.apache.kafka.clients.admin.NewTopic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
