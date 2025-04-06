@@ -1,7 +1,9 @@
 package com.hareendev.orderservice.controller;
 
+import com.hareendev.base.dto.OrderEventDTO;
 import com.hareendev.orderservice.common.OrderResponse;
 import com.hareendev.orderservice.dto.OrderDTO;
+import com.hareendev.orderservice.kafka.OrderProducer;
 import com.hareendev.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,9 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private OrderProducer orderProducer;
+
     @GetMapping("/getorders")
     public List<OrderDTO> getOrders() {
         return orderService.getAllOrders();
@@ -22,13 +27,13 @@ public class OrderController {
 
     @PostMapping("/addorder")
     public OrderResponse saveOrder(@RequestBody OrderDTO orderDTO) {
+        OrderEventDTO orderEventDTO = new OrderEventDTO();
+        orderEventDTO.setMessage("Order is committed");
+        orderEventDTO.setStatus("Pending");
+        orderProducer.sendMessage(orderEventDTO);
         return orderService.saveOrder(orderDTO);
     }
 
-//    @PostMapping("/addorder")
-//    public OrderDTO saveOrder(@RequestBody OrderDTO orderDTO) {
-//        return orderService.saveOrder(orderDTO);
-//    }
 
     @PutMapping("/updateorder")
     public OrderDTO updateOrder(@RequestBody OrderDTO orderDTO) {
