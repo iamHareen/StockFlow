@@ -47,6 +47,11 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <dependency>
+        <groupId>org.hareendev</groupId>
+        <artifactId>base</artifactId>
+        <version>${project.parent.version}</version>
+        </dependency>
 
     </dependencies>
 </project>
