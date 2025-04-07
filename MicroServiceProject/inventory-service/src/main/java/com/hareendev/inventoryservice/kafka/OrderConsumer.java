@@ -19,4 +19,5 @@ public class OrderConsumer {
     public void consume(OrderEventDTO orderEventDTO) {
         LOGGER.info("Receiving order event from the topic: {}", orderEventDTO);
     }
+
 }
