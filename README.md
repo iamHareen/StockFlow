@@ -22,7 +22,7 @@ A Spring Boot-based microservices architecture for inventory, order, and product
 | **API Gateway**       | Spring Cloud Gateway                                                       |
 | **Security**          | Spring Security, Keycloak                      |
 | **Messaging**         | Apache Kafka                                                               |
-| **Monitoring**        | Prometheus, Grafana, Spring Boot Actuator                                  |
+| **Monitoring**        | Prometheus, Grafana                                |
 | **Database**          | MySQL                                                                      |
 
 ## 🚀 Getting Started
